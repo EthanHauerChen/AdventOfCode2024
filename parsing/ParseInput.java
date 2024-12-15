@@ -13,4 +13,13 @@ public class ParseInput {
             return "";
         }
     }
+
+    public static String[] inputToLines(String filename) {
+        try {
+            return Files.readString(Path.of(filename)).split("\n");
+        } catch (IOException e) {
+            System.err.println("Error reading the file: " + e.getMessage());
+            return new String[0];
+        }
+    }
 }
